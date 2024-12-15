@@ -1,0 +1,191 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0; /* Grey background color */
+  color: #333; /* Dark text color for contrast */
+  line-height: 1.6;
+  overflow: hidden;
+  perspective: 1000px; /* Adds 3D perspective */
+}
+
+/* Main Container Styling */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Logo Animation */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter, transform;
+  transition: filter 300ms ease-in-out, transform 0.3s ease-in-out;
+  transform-style: preserve-3d; /* Ensures the element preserves 3D transformation */
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: rotateY(20deg) rotateX(15deg); /* 3D effect on hover */
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: rotateY(-20deg) rotateX(15deg); /* 3D effect on hover */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card Styling with 3D Effects */
+.card {
+  padding: 2em;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd; /* Professional border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  transform: perspective(1500px) rotateX(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: perspective(1500px) rotateX(10deg); /* Add 3D rotation on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+}
+
+.card:active {
+  transform: perspective(1500px) scale(0.98); /* Slight scaling when clicked */
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #4CAF50;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Adds text shadow for depth */
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 500;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  font-size: 1.75em;
+  color: #333;
+}
+
+h4 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Form and Button Styles */
+input[type="text"], input[type="number"] {
+  width: 80%;
+  padding: 0.8em;
+  margin: 1em 0;
+  font-size: 1em;
+  border: 1px solid #ddd; /* Professional border */
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  color: #333;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+  transform: scale(1.05); /* Slight zoom effect when focused */
+}
+
+button {
+  padding: 0.75em 2em;
+  font-size: 1.1em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-5px) scale(1.05); /* Button lift effect with scaling */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(72, 198, 124, 0.6);
+}
+
+/* Property Details */
+.property-details {
+  background-color: #f9f9f9;
+  padding: 2em;
+  border-radius: 10px;
+  border: 1px solid #ddd; /* Professional border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  transform: perspective(1500px) rotateX(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.property-details:hover {
+  transform: perspective(1500px) rotateX(5deg); /* Add 3D rotation on hover */
+}
+
+/* Layout and Structure */
+div {
+  margin-bottom: 2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  input[type="text"], input[type="number"] {
+    width: 90%;
+  }
+
+  button {
+    padding: 0.75em 1.5em;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}
